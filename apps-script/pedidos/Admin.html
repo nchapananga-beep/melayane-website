@@ -1,0 +1,19 @@
+<!doctype html><html lang="pt"><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>MELAYANE — Administração</title><style>body{font:16px Arial,sans-serif;background:#f3f7f6;color:#102a3b;margin:0;padding:24px}main{max-width:850px;margin:auto;background:white;padding:28px;border-radius:16px}label{display:block;margin:18px 0 6px}input,select,textarea,button{font:inherit;padding:12px;box-sizing:border-box;max-width:100%}input:not([type=checkbox]),textarea,select{width:100%;border:1px solid #9eafb5;border-radius:6px}button{background:#102a3b;color:white;border:0;border-radius:6px;cursor:pointer;margin:14px 0}button:disabled{opacity:.5}article{border:1px solid #ccd9dc;padding:18px;margin:16px 0;border-radius:8px;overflow-wrap:anywhere}p{line-height:1.6;white-space:pre-wrap}.trap{display:none}#aviso{font-weight:bold}a{color:#16675f}</style></head><body><main><h1>Pedidos do website</h1><p id="resumo" role="status"></p><button id="actualizar">Actualizar pedidos</button><label for="filtro">Estado</label><select id="filtro"><option>Todos</option><option>Novo</option><option>Em atendimento</option><option>Concluído</option></select><p id="aviso" role="status" aria-live="polite"></p><div id="lista"></div></main><script>
+let pedidos=[];
+const el=id=>document.getElementById(id);
+function render(){
+el('resumo').textContent=pedidos.filter(p=>p.estado==='Novo').length+' novos · '+pedidos.filter(p=>p.estado==='Em atendimento').length+' em atendimento · '+pedidos.filter(p=>p.estado==='Concluído').length+' concluídos';
+el('lista').replaceChildren();
+const visiveis=pedidos.filter(p=>el('filtro').value==='Todos'||p.estado===el('filtro').value);
+if(!visiveis.length)el('lista').textContent='Nenhum pedido neste estado.';
+visiveis.forEach(p=>{
+const a=document.createElement('article'),h=document.createElement('h2');h.textContent=p.nome+' — '+p.servico;a.append(h);
+const info=document.createElement('p');info.textContent=new Date(p.data).toLocaleString('pt-PT')+'\nEmail: '+(p.email||'—')+'\nTelefone: '+(p.telefone||'—')+'\nReferência: '+p.id;a.append(info);
+const msg=document.createElement('p');msg.textContent=p.mensagem;a.append(msg);
+const label=document.createElement('label');label.textContent='Estado do pedido';const s=document.createElement('select');
+['Novo','Em atendimento','Concluído'].forEach(v=>{const o=document.createElement('option');o.textContent=v;o.selected=v===p.estado;s.append(o);});label.append(s);a.append(label);
+s.addEventListener('change',()=>{const anterior=p.estado,novo=s.value;s.disabled=true;google.script.run.withSuccessHandler(()=>{p.estado=novo;el('aviso').textContent='Estado guardado.';render();}).withFailureHandler(err=>{s.value=anterior;s.disabled=false;el('aviso').textContent=err.message;}).actualizarEstado(p.id,novo);});el('lista').append(a);
+});}
+function carregar(){el('actualizar').disabled=true;el('aviso').textContent='A carregar…';google.script.run.withSuccessHandler(r=>{pedidos=r;render();el('aviso').textContent='Actualizado às '+new Date().toLocaleTimeString('pt-PT');el('actualizar').disabled=false;}).withFailureHandler(err=>{el('aviso').textContent=err.message;el('actualizar').disabled=false;}).listarPedidos();}
+el('actualizar').onclick=carregar;el('filtro').onchange=render;carregar();
+</script></body></html>
