@@ -4,3 +4,36 @@
 
 /* Dimensões por localização */
 .site-header .brand-logo{width:120px;height:120px}.site-header .nav-shell{height:136px}.hero-art .art-core{width:120px;height:120px;border-radius:16px}.project-tech .project-logo{width:190px;height:190px}@media(max-width:720px){.site-header .brand-logo{width:96px;height:96px}.site-header .nav-shell{height:112px}.nav-links{top:111px}.hero-art .art-core{width:140px;height:140px}.project-tech .project-logo{width:170px;height:170px}}@media(max-width:380px){.site-header .brand-logo{width:82px;height:82px}.site-header .brand strong{font-size:13px}.site-header .brand small{font-size:6px}}
+
+
+/* Identidade estratégica institucional */
+.strategy{background:#f7f9f7}
+.strategy .section-heading{margin-bottom:38px}
+.strategy .section-heading h2 span{color:#4c9084}
+.strategy-purpose{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.purpose-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px}
+.purpose-card h3{font-size:25px;line-height:1.25;letter-spacing:-.7px;margin:15px 0}
+.purpose-card p,.pillar-card p{color:var(--muted);font-size:14px;line-height:1.8;margin:0}
+.purpose-vision{background:var(--navy);color:#fff;border-color:var(--navy)}
+.purpose-vision .section-kicker{color:var(--aqua)}
+.purpose-vision p{color:#c4d5d7}
+.strategy-subheading{margin:62px 0 22px}
+.strategy-subheading h3{font-size:30px;letter-spacing:-.8px;margin:8px 0 0}
+.objective-list{padding:0;list-style:none;counter-reset:objectives;display:grid;grid-template-columns:1fr 1fr;gap:12px 28px}
+.objective-list li{counter-increment:objectives;position:relative;padding:15px 15px 15px 52px;background:#fff;border:1px solid #e5ebea;border-radius:10px;color:#53656b;font-size:14px;line-height:1.7}
+.objective-list li:before{content:counter(objectives,decimal-leading-zero);position:absolute;left:16px;top:15px;color:#39877f;font-weight:800;font-size:12px}
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pillar-card{background:#fff;border:1px solid #e4eae8;border-radius:12px;padding:23px;min-height:190px}
+.pillar-card>span{color:#39877f;font-weight:800;font-size:12px}
+.pillar-card h4{font-size:17px;line-height:1.35;margin:15px 0 9px}
+.strategy-bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px}
+.strategy-bottom-grid .strategy-subheading{margin-top:55px}
+.values-list{display:flex;flex-wrap:wrap;gap:9px}
+.values-list span{padding:9px 13px;border-radius:30px;background:#e5f0eb;color:#315f5b;font-size:12px;font-weight:700}
+.indicator-list{margin:0;padding-left:20px;color:#53656b;font-size:14px;line-height:2}
+.growth-note{margin-top:55px;background:#e5f0eb;border-left:4px solid #4c9084;border-radius:0 12px 12px 0;padding:23px 27px}
+.growth-note strong{font-size:17px;color:var(--navy)}
+.growth-note p{margin:8px 0 0;color:#53656b;font-size:14px;line-height:1.8}
+.strategy-legal{margin:22px 0 0;color:#77868a;font-size:11px;line-height:1.7}
+@media(max-width:800px){.pillars-grid{grid-template-columns:1fr 1fr}.objective-list{grid-template-columns:1fr}.strategy-bottom-grid{gap:25px}}
+@media(max-width:600px){.strategy-purpose,.strategy-bottom-grid,.pillars-grid{grid-template-columns:1fr}.purpose-card{padding:24px}.strategy-subheading{margin-top:45px}.strategy-subheading h3{font-size:26px}}
