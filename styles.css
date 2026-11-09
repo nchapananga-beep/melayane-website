@@ -37,3 +37,11 @@
 .strategy-legal{margin:22px 0 0;color:#77868a;font-size:11px;line-height:1.7}
 @media(max-width:800px){.pillars-grid{grid-template-columns:1fr 1fr}.objective-list{grid-template-columns:1fr}.strategy-bottom-grid{gap:25px}}
 @media(max-width:600px){.strategy-purpose,.strategy-bottom-grid,.pillars-grid{grid-template-columns:1fr}.purpose-card{padding:24px}.strategy-subheading{margin-top:45px}.strategy-subheading h3{font-size:26px}}
+
+.phases-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.phases-grid article{background:#fff;border:1px solid #e4eae8;border-radius:11px;padding:20px}
+.phases-grid article>span{font-size:10px;letter-spacing:1.3px;color:#39877f;font-weight:850}
+.phases-grid h4{font-size:16px;line-height:1.35;margin:12px 0 8px}
+.phases-grid p{font-size:12px;line-height:1.7;color:var(--muted);margin:0}
+@media(max-width:800px){.phases-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.phases-grid{grid-template-columns:1fr}}
