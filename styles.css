@@ -66,3 +66,14 @@
 .strategy-bottom-grid .strategy-disclosure{min-width:0}
 .strategy-bottom-grid .strategy-disclosure-content{padding-bottom:22px}
 @media(max-width:600px){.strategy-disclosures{margin-top:38px}.strategy-disclosure>summary{padding:16px 17px;font-size:14px}.strategy-disclosure-content{padding:0 17px 20px}.strategy-bottom-grid{gap:12px}}
+
+
+/* Apresentação dos módulos do Software MELAYANE */
+.service-card-featured{min-height:100%;border-color:#cbded8}
+.software-modules{list-style:none;padding:0;margin:0 0 18px;display:grid;grid-template-columns:1fr;gap:8px}
+.software-modules li{position:relative;padding-left:19px;color:#53656b;font-size:12px;line-height:1.55}
+.software-modules li:before{content:"✓";position:absolute;left:0;top:0;color:#39877f;font-weight:900}
+.software-launch-status{display:inline-block;align-self:flex-start;border:1px solid #d5a94c;background:#fff7e5;color:#765718;border-radius:30px;padding:7px 11px;font-size:10px;font-weight:800;margin:0 0 10px}
+.service-card .software-readiness{font-size:11px;line-height:1.65;margin:0 0 16px;color:#718087}
+.project-readiness{font-size:12px!important;line-height:1.65!important;opacity:.72!important;margin-top:-8px!important}
+@media(min-width:801px){.services-grid{align-items:stretch}.service-card-featured{grid-row:span 1}}
