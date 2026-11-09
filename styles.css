@@ -77,3 +77,9 @@
 .service-card .software-readiness{font-size:11px;line-height:1.65;margin:0 0 16px;color:#718087}
 .project-readiness{font-size:12px!important;line-height:1.65!important;opacity:.72!important;margin-top:-8px!important}
 @media(min-width:801px){.services-grid{align-items:stretch}.service-card-featured{grid-row:span 1}}
+
+
+/* Descrições funcionais dos módulos do Software de Gestão MELAYANE */
+.software-modules li{padding-left:19px;margin-bottom:5px}
+.software-modules li strong{display:block;color:#30464b;font-size:12px;font-weight:800;margin-bottom:2px}
+.software-modules li span{display:block;color:#64757a;font-size:11px;line-height:1.55}
