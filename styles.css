@@ -83,3 +83,12 @@
 .software-modules li{padding-left:19px;margin-bottom:5px}
 .software-modules li strong{display:block;color:#30464b;font-size:12px;font-weight:800;margin-bottom:2px}
 .software-modules li span{display:block;color:#64757a;font-size:11px;line-height:1.55}
+
+/* Projecto apresentado no portefólio de Soluções Digitais. */
+.project-case{margin-top:24px;border-top:1px solid currentColor;padding-top:18px;overflow-wrap:anywhere}
+.project-case summary{cursor:pointer;font-weight:700;line-height:1.5;padding:6px 0}
+.project-case summary:focus-visible{outline:2px solid currentColor;outline-offset:5px}
+.project-case-content{padding-top:16px}
+.project-case h4{font-size:18px;margin:0 0 12px}
+.project-case ul{padding-left:20px;font-size:14px;margin:0 0 18px}
+.project-case .project-case-privacy{font-size:12px;margin-bottom:0}
